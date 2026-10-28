@@ -6,9 +6,9 @@
 
 零基础起点 · 实验驱动 · 弹性打卡 · 全平台（Windows / macOS / Android / iOS）
 
-[![进度](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/__REPO_SLUG__/main/progress.json&query=$.percent&label=%E8%BF%9B%E5%BA%A6&suffix=%25&color=2ea44f)](progress.json)
-[![已完成](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/__REPO_SLUG__/main/progress.json&query=$.done&label=%E4%BB%BB%E5%8A%A1&suffix=%20%E9%A1%B9&color=orange)](progress.json)
-[![连续打卡](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/__REPO_SLUG__/main/progress.json&query=$.streak.current&label=%E8%BF%9E%E7%BB%AD&suffix=%20%E5%A4%A9&color=blue)](progress.json)
+[![进度](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/bonus222/ai-network-lab/main/progress.json&query=$.percent&label=%E8%BF%9B%E5%BA%A6&suffix=%25&color=2ea44f)](progress.json)
+[![已完成](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/bonus222/ai-network-lab/main/progress.json&query=$.done&label=%E4%BB%BB%E5%8A%A1&suffix=%20%E9%A1%B9&color=orange)](progress.json)
+[![连续打卡](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/bonus222/ai-network-lab/main/progress.json&query=$.streak.current&label=%E8%BF%9E%E7%BB%AD&suffix=%20%E5%A4%A9&color=blue)](progress.json)
 
 </div>
 
