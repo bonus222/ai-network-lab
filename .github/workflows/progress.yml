@@ -1,0 +1,47 @@
+name: progress
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "weeks/**"
+      - "checkins/**"
+      - "scripts/**"
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: progress
+  cancel-in-progress: true
+
+jobs:
+  rebuild:
+    # 防止机器人自己的提交再次触发，形成死循环
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild progress data and SVGs
+        run: python scripts/build_progress.py
+
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "没有变化，跳过提交"
+            exit 0
+          fi
+          git config user.name  "checkin-bot"
+          git config user.email "checkin-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: update progress"
+          git push

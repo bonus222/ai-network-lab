@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 208" width="900" height="208" role="img" aria-label="学习进度 0.0%">
+  <style>
+    .title { font: 700 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#57606a; letter-spacing:.6px; }
+    .pct   { font: 800 58px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#1f2328; }
+    .sub   { font: 500 14px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#57606a; }
+    .lab   { font: 600 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#57606a; }
+    .lab2  { font: 500 10px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#8b949e; }
+    .track { fill:#eaeef2; }
+    .foot  { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Noto Sans,sans-serif; fill:#8b949e; }
+    .bg    { fill:#ffffff; }
+    @media (prefers-color-scheme: dark) {
+      .title,.sub,.lab { fill:#8b949e; }
+      .pct   { fill:#e6edf3; }
+      .lab2,.foot { fill:#6e7681; }
+      .track { fill:#21262d; }
+      .bg    { fill:#0d1117; }
+    }
+  </style>
+  <defs>
+    <clipPath id="rounded"><rect x="292" y="74" width="574" height="30" rx="15.0"/></clipPath>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="208" rx="14"/>
+
+  <text x="36" y="42" class="title">学习进度 · 16 周网络对抗实验室</text>
+  <text x="34" y="110" class="pct">0%</text>
+  <text x="38" y="136" class="sub">0 / 112 项任务已完成</text>
+  <text x="38" y="158" class="sub">🔥 连续 0 天 ｜ 活跃 0 天</text>
+
+  <rect x="292" y="74" width="574" height="30" rx="15.0" class="track"/>
+  <g clip-path="url(#rounded)">
+    
+  </g>
+
+  <text x="356.1" y="126" class="lab" text-anchor="middle">基础层</text><text x="356.1" y="142" class="lab2" text-anchor="middle">0/25</text><text x="489.3" y="126" class="lab" text-anchor="middle">协议层</text><text x="489.3" y="142" class="lab2" text-anchor="middle">0/27</text><text x="614.9" y="126" class="lab" text-anchor="middle">工程层</text><text x="614.9" y="142" class="lab2" text-anchor="middle">0/22</text><text x="709.7" y="126" class="lab" text-anchor="middle">风控层</text><text x="709.7" y="142" class="lab2" text-anchor="middle">0/15</text><text x="807.1" y="126" class="lab" text-anchor="middle">研究层</text><text x="807.1" y="142" class="lab2" text-anchor="middle">0/23</text>
+
+  <text x="36" y="196" class="foot">更新于 2026-10-29 00:07 (+08:00)</text>
+</svg>

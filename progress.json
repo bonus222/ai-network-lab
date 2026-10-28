@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "updated": "2026-10-29T00:07:47+08:00",
+  "repo": "__REPO_SLUG__",
+  "total": 112,
+  "done": 0,
+  "percent": 0.0,
+  "streak": {
+    "current": 0,
+    "longest": 0,
+    "last": null
+  },
+  "active_days": 0,
+  "activity": {},
+  "phases": [
+    {
+      "id": "P1",
+      "name": "基础层",
+      "color": "#2ea44f",
+      "weeks": [
+        1,
+        4
+      ],
+      "total": 25,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "id": "P2",
+      "name": "协议层",
+      "color": "#2b6cb0",
+      "weeks": [
+        5,
+        8
+      ],
+      "total": 27,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "id": "P3",
+      "name": "工程层",
+      "color": "#6b46c1",
+      "weeks": [
+        9,
+        11
+      ],
+      "total": 22,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "id": "P4",
+      "name": "风控层",
+      "color": "#c05621",
+      "weeks": [
+        12,
+        13
+      ],
+      "total": 15,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "id": "P5",
+      "name": "研究层",
+      "color": "#b83280",
+      "weeks": [
+        14,
+        16
+      ],
+      "total": 23,
+      "done": 0,
+      "percent": 0.0
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "title": "数据包是怎么走的",
+      "file": "weeks/w01-packet-journey.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 2,
+      "title": "TLS 与 HTTPS 握手",
+      "file": "weeks/w02-tls-https.md",
+      "total": 6,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 3,
+      "title": "代理的模型：正向、反向、SOCKS5",
+      "file": "weeks/w03-proxy-model.md",
+      "total": 6,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 4,
+      "title": "防火墙与 DPI：检测到底在检测什么",
+      "file": "weeks/w04-firewall-dpi.md",
+      "total": 6,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 5,
+      "title": "Shadowsocks 与「被识别的历史」",
+      "file": "weeks/w05-shadowsocks.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 6,
+      "title": "VMess / VLESS / XTLS：套进 TLS 之后的新问题",
+      "file": "weeks/w06-vmess-vless.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 7,
+      "title": "Trojan 与「像 HTTPS」的极限",
+      "file": "weeks/w07-trojan.md",
+      "total": 6,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 8,
+      "title": "REALITY / uTLS / QUIC：借一张真证书",
+      "file": "weeks/w08-reality-quic.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 9,
+      "title": "VPS 选型与初始化",
+      "file": "weeks/w09-vps.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 10,
+      "title": "部署 Xray + REALITY 全流程",
+      "file": "weeks/w10-deploy-reality.md",
+      "total": 8,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 11,
+      "title": "分流、DNS 与泄漏自测",
+      "file": "weeks/w11-routing-dns.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 12,
+      "title": "IP 信誉与平台风控：为什么「通了」不等于「能用」",
+      "file": "weeks/w12-ip-reputation.md",
+      "total": 8,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 13,
+      "title": "出口质量评测方法论",
+      "file": "weeks/w13-quality-eval.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 14,
+      "title": "主动探测与探测抵抗",
+      "file": "weeks/w14-active-probing.md",
+      "total": 7,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 15,
+      "title": "读论文 + 写一个最小混淆层",
+      "file": "weeks/w15-papers-toy-protocol.md",
+      "total": 8,
+      "done": 0,
+      "percent": 0.0
+    },
+    {
+      "week": 16,
+      "title": "复盘与迁移",
+      "file": "weeks/w16-review.md",
+      "total": 8,
+      "done": 0,
+      "percent": 0.0
+    }
+  ],
+  "done_ids": []
+}

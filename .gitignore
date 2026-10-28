@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 本地私有资料：服务器 IP、UUID、私钥、订阅链接一律放这里，不要提交
+private/
+*.secret
+*.key
+secrets.json
+
+# 抓包与测量产物
+*.pcap
+*.pcapng
+*.csv
+*.log
+results/
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
