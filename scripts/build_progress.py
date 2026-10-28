@@ -218,7 +218,6 @@ def compute(weeks: list[dict], entries: list[dict]) -> dict:
 
     return {
         "schema": 1,
-        "updated": now_local().isoformat(timespec="seconds"),
         "repo": repo_slug(),
         "total": total,
         "done": done,
@@ -501,6 +500,15 @@ def render_calendar_svg(prog: dict) -> str:
 # 主流程
 # --------------------------------------------------------------------------
 
+def load_prev_progress() -> dict | None:
+    if not PROGRESS.exists():
+        return None
+    try:
+        return json.loads(read_text(PROGRESS))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
 def main() -> int:
     weeks = parse_weeks()
     if not weeks:
@@ -514,17 +522,38 @@ def main() -> int:
     save_log(entries)
 
     prog = compute(weeks, entries)
-    write_text(PROGRESS, json.dumps(prog, ensure_ascii=False, indent=2) + "\n")
 
-    ASSETS.mkdir(parents=True, exist_ok=True)
-    write_text(ASSETS / "progress.svg", render_progress_svg(prog))
-    write_text(ASSETS / "calendar.svg", render_calendar_svg(prog))
+    # 只有「实质内容」变了才刷新时间戳。
+    # 否则每次 push 都会产生一条只改 updated 的机器人提交，历史全是噪音。
+    stamp = now_local().isoformat(timespec="seconds")
+    prev = load_prev_progress()
+    if prev:
+        core = {k: v for k, v in prog.items() if k != "updated"}
+        prev_core = {k: v for k, v in prev.items() if k != "updated"}
+        if core == prev_core and prev.get("updated"):
+            stamp = prev["updated"]
+    prog["updated"] = stamp
+
+    # 先全部渲染成字符串，再和磁盘逐字节比对，只写真正有差异的文件
+    wanted: list[tuple[Path, str]] = [
+        (PROGRESS, json.dumps(prog, ensure_ascii=False, indent=2) + "\n"),
+        (ASSETS / "progress.svg", render_progress_svg(prog)),
+        (ASSETS / "calendar.svg", render_calendar_svg(prog)),
+    ]
 
     if README.exists():
-        text = read_text(README)
-        text = text.replace("__REPO_SLUG__", prog["repo"])
-        text = replace_block(text, render_readme_block(prog))
-        write_text(README, text)
+        original = read_text(README).replace("__REPO_SLUG__", prog["repo"])
+        wanted.append((README, replace_block(original, render_readme_block(prog))))
+
+    dirty = [(p, c) for p, c in wanted if not p.exists() or read_text(p) != c]
+
+    for path, content in dirty:
+        write_text(path, content)
+
+    if dirty:
+        print(f"[write] 更新 {len(dirty)} 个文件：" + "、".join(p.name for p, _ in dirty))
+    else:
+        print("[skip] 进度无变化，未改动任何文件")
 
     print(
         f"[ok] {prog['done']}/{prog['total']} ({prog['percent']}%) · "
