@@ -61,8 +61,11 @@ def set_task(tid: str, checked: bool) -> bool:
         raise KeyError(tid)
 
     path = ROOT / task["file"]
-    text = path.read_text(encoding="utf-8")
-    lines = text.split("\n")
+    # newline="" 让 CRLF 原样保留（read_text 会把 \r\n 规范化成 \n）
+    with open(path, "r", encoding="utf-8", newline="") as fh:
+        text = fh.read()
+    # keepends=True 保留每行原来的换行符，避免改动整份文件的行尾
+    lines = text.splitlines(keepends=True)
     idx = task["line"] - 1
     if idx < 0 or idx >= len(lines):
         raise IndexError(f"{tid} 行号越界")
@@ -73,7 +76,7 @@ def set_task(tid: str, checked: bool) -> bool:
         return False
 
     lines[idx] = new
-    bp.write_text(path, "\n".join(lines))
+    bp.write_text(path, "".join(lines))
     return True
 
 

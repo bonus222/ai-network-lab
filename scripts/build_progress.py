@@ -78,7 +78,8 @@ def repo_slug() -> str:
     try:
         out = subprocess.run(
             ["git", "remote", "get-url", "origin"],
-            cwd=ROOT, capture_output=True, text=True, timeout=5,
+            cwd=ROOT, capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=5,
         )
         url = out.stdout.strip()
     except Exception:
@@ -113,6 +114,7 @@ def parse_weeks() -> list[dict]:
             title = tm.group(2)
 
         tasks = []
+        # splitlines() 同时兼容 LF / CRLF，避免 Windows 检出后多出 \r
         for line_no, line in enumerate(text.splitlines(), start=1):
             t = TASK_RE.match(line)
             if not t:
